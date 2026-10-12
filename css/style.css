@@ -152,12 +152,92 @@ section > div img {
     display: block;
 }
 
+/* HAMBURGER MENU: MOBILE AND TABLET */
+@media (min-width: 701px) and (max-width: 849px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle {
+        position: relative;
+        width: 22px;
+        height: 14px;
+        flex-direction: column;
+        gap: 4px;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 22px;
+        height: 1px;
+        background: #ffffff;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle span:nth-child(1) {
+        transform: translateY(-4px);
+    }
+
+    .menu-toggle span:nth-child(2) {
+        transform: translateY(0);
+    }
+
+    .menu-toggle span:nth-child(3) {
+        transform: translateY(4px);
+    }
+
+    .menu-toggle.open {
+        transform: scale(0.9);
+    }
+
+    .menu-toggle.open span:nth-child(1) {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    .menu-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open span:nth-child(3) {
+        transform: translateY(0) rotate(-45deg);
+    }
+
+
+    nav {
+        gap: 0;
+    }
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        text-align: right;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .mobile-menu.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
 /* MOBILE */
 
 @media (max-width: 700px) {
 
     header {
-        padding: 20px;
+        padding: 28px 20px;
     }
 
     .mobile-menu {
@@ -290,7 +370,7 @@ section > div img {
 }
 
 /* Chapter layout: compact two-column range */
-@media (min-width: 701px) and (max-width: 1350px) {
+@media (min-width: 701px) and (max-width: 900px) {
     main.chapter > section.chapter-intro {
         height: auto;
     }
@@ -308,6 +388,40 @@ section > div img {
     main.chapter .chapter-pair img {
         height: clamp(240px, 33.33vw, 450px);
         object-fit: contain;
+    }
+}
+
+
+/* CHAPTER TITLES: MOBILE AND TABLET */
+@media (max-width: 1400px) {
+    .chapter-intro h1 {
+        font-size: 40px;
+        line-height: 1;
+    }
+
+    main.chapter > section.chapter-intro {
+        padding: 10px 20px 0;
+    }
+}
+
+/* CHAPTER PAGES: DESKTOP */
+
+/* Title size above 900px */
+@media (min-width: 901px) {
+    .chapter-intro h1 {
+        font-size: 52px;
+        line-height: normal;
+    }
+}
+
+/* Image positioning: medium desktop */
+@media (min-width: 901px) and (max-width: 1350px) {
+    main.chapter > section.chapter-intro {
+        height: auto;
+    }
+
+    main.chapter > section.chapter-intro + .chapter-pair {
+        margin-top: 0;
     }
 }
 
@@ -468,15 +582,36 @@ section > div img {
 }
 
 .about-intro {
-    margin-bottom: -500px;
-    margin-left: -5vw;
+    padding-top: 30px;
+    margin-bottom: -460px;
+    margin-left: -4vw;
 }
 
 .about-intro h1 {
     margin: 0;
-    font-size: 68px;
+    font-size: 52px;
     font-weight: 400;
     letter-spacing: 0.08em;
+}
+
+/* ABOUT: TABLET AND COMPACT DESKTOP */
+@media (min-width: 701px) and (max-width: 900px) {
+    .about-intro {
+        padding-top: 10px;
+        margin-bottom: -400px;
+    }
+
+    .about-intro h1 {
+        font-size: 40px;
+        line-height: 1;
+    }
+}
+
+/* ABOUT: LARGE DESKTOP */
+@media (min-width: 901px) and (max-width: 1350px) {
+    .about-intro {
+        margin-bottom: -360px;
+    }
 }
 
 .about-content {
@@ -550,25 +685,28 @@ section > div img {
     }
 
     .about-intro {
+        padding: 10px 20px 0;
+        margin-top: -20px;
         margin-bottom: 40px;
-        margin-left: 0;
+        margin-left: -20px;
     }
 
     .about-intro h1 {
         font-size: 40px;
+        line-height: 1;
     }
 
     .about-content {
         width: 100%;
         margin-left: 0;
-
+        margin-top: -35px;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
     .about-portrait {
-        margin-top: -300px;
+        margin-top: -400px;
     }
 
     .about-text {
@@ -584,7 +722,7 @@ section > div img {
     .about-contact {
         width: 100%;
         margin-left: 0;
-        margin-top: 80px;
+        margin-top: 10px;
     }
 
     .about-contact h2 {
@@ -592,6 +730,13 @@ section > div img {
         margin-bottom: 35px;
     }
 
+}
+
+/* ABOUT: 500–700px */
+@media (min-width:500px) and (max-width:700px) {
+    .about-portrait {
+        align-self: stretch;
+    }
 }
 
 /* FOOTER */
@@ -873,12 +1018,12 @@ main.prints > section:first-child {
 @media (max-width: 900px) {
 
     .prints {
-        padding: 100px 20px 60px;
+        padding: 10px 25px 60px;
     }
 
     .prints-intro {
         width: 100%;
-        margin-bottom: 60px;
+        margin-bottom: 30px;
     }
 
     .prints-intro h1 {
