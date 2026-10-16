@@ -104,6 +104,65 @@ main > section:first-child img {
 }
 
 
+/* HOMEPAGE TITLE */
+
+.homepage-hero {
+    position: relative;
+}
+
+.homepage-title {
+    position: absolute;
+    top: 110px;
+    left: 40px;
+    z-index: 2;
+    color: #f5f5f5;
+    display: block;
+    width: auto;
+    margin: 0;
+}
+
+.homepage-title h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    font-variant: small-caps;
+}
+
+.homepage-title p {
+    margin: 8px 0 0;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+    text-transform: none;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+/* HOMEPAGE TITLE: MOBILE */
+
+@media (max-width: 500px) {
+
+    .homepage-title {
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .homepage-title h1 {
+        max-width: 100%;
+        line-height: 1.2;
+    }
+
+    .homepage-title p {
+        text-align: center;
+    }
+
+}
+
 /* CHAPTERS */
 
 main > section:not(:first-child) {
